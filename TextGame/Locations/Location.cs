@@ -3,9 +3,19 @@ using TextGame.Interpreters;
 
 namespace TextGame.Locations
 {
+/// <summary>
+/// Класс для работы с локациями
+/// </summary>
     public class Location
     {
+        /// <summary>
+        /// Содержит свзяь локаций между друг-другом
+        /// </summary>
         private Dictionary<LocationEnums, List<LocationEnums>> LocationConnections { get; set; }
+
+        /// <summary>
+        /// Содержит свзять между предметами на локациях и локациями
+        /// </summary>
         private Dictionary<LocationEnums, List<ItemsEnum>> LocationItems { get; set; }
         private Interpreter interpreter { get; set; }
 
@@ -105,6 +115,10 @@ namespace TextGame.Locations
                 return null;
             }
         }
+
+
+        // Все фнункции ниже выполняет рутинную работу с текстом, создают префиксы,
+        // выводят связанный локации или вещи
 
         private string TryGetLocationItems(LocationEnums location)
         {

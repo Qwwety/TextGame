@@ -6,6 +6,12 @@ namespace TextGame.Interpreters
 {
     public class Interpreter
     {
+        /// <summary>
+        /// Класс интерпритирует текст в значения с которыми можно работать, в данном случае енумы
+        /// или делает обратно переводит енумы обратно в текст
+        /// </summary>
+        /// <param name="PlayerCommand"></param>
+        /// <returns></returns>
         public CommandDTO ConvertPlayerCommands(string PlayerCommand)
         {
             var result = new CommandDTO();

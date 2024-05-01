@@ -10,6 +10,8 @@ StatusMachine statusMachine = new StatusMachine(Interpreter);
 
 Console.WriteLine("Команды игрока:\r\n- осмотреться\r\n- идти <имя локации>  \r\n- взять <имя предмета>  \r\n\r\nЛокации: \r\n- кухня\r\n- коридор\r\n- комната\r\n- улица\r\n\r\nПредметы: \r\n- рюкзак\r\n- конспекты\r\n- ключи. \r\n \r\nЧтобы закончить игру ввидете \"Cтоп\" ");
 
+// в ReadMe было написано "initGame делает нового игрока и задаёт ему начальное состояние."
+// я отказался от этой функции, теперь при старте приложухи у нас появляться  игрок, с начальный состоянием 
 while (!statusMachine.IsTimeToStop)
 {
     var result = statusMachine.GetCommand(Console.ReadLine());
@@ -17,6 +19,9 @@ while (!statusMachine.IsTimeToStop)
 }
 
 
+/// <summary>
+/// Класс нужен, как прослойка, между командами игрока и вызовом ф-ий
+/// </summary>
 class StatusMachine
 {
     private Interpreter Interpreter { get; set; }

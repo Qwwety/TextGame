@@ -50,6 +50,13 @@ namespace TextGame.Character
             return result.Message;
         }
 
+        /// <summary>
+        /// Нереализованная функция, хотел сделать, но т.к. не обязательно отказался.
+        /// Показывает, что в моей системе, можно спокойно добовялть новые фичи, меня минимум. 
+        /// В данном случае потребуется добавить новый енум в PlayerCommandsEnum, добавить обработку в 
+        /// ConvertPlayerCommands и все 
+        /// </summary>
+        /// <returns></returns>
         private string GetPlayerInventoryList()
         {
             var result = Interpreter.GetItemsLocalizationsNames(CharacterInventory);
